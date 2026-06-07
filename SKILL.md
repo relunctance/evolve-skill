@@ -9,13 +9,21 @@ triggers:
   - evolve skill
 category: development
 author: relunctance
+version: "1.1.0"
+license: MIT
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-06-11
 tags:
   - skill
   - evolution
   - self-improvement
   - meta-level
+metadata:
+  hermes:
+    related_skills:
+      - skill-created
+      - darwin-skill
+      - readme-skill
 ---
 
 # evolve-skill
