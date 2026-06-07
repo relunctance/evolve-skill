@@ -42,6 +42,53 @@ skill 运行 → reflection_hook → LLM 反思沉淀 → evolve-skill 扫描
 
 ---
 
+## BDD + TDD 开发流程（修改 scanner.py 时遵守）
+
+### 判断标准
+
+| 该用代码 | 该用 SOP/LLM |
+|----------|-------------|
+| 精确计算（severity×category 分数） | 决策判断（哪个 skill 优先） |
+| 文件 IO（扫描 learns/ 目录） | 文本处理（生成进化报告） |
+| 幂等扫描脚本（< 200 行） | 工作流编排 |
+
+### 执行顺序
+
+1. **先问**：能否用 SOP + LLM 解决（如让 LLM 直接读 learns/）？
+2. 如果不行，再问：scanner.py 的最小化代码方案是什么？
+3. 最后才动手写代码
+4. 代码总量控制：单一改动 < 150 行新增代码
+
+### commit 时机规则
+
+| 场景 | 时机 |
+|------|------|
+| scanner.py 单元测试通过 | 立即 commit |
+| 发现新异常场景 | 立即记录到异常表 + 立即 commit |
+| scanner 输出格式变更 | 单独 commit（向后兼容必须保持）|
+
+## scanner 测试用例（BDD）
+
+```python
+# BDD: scan_skill(learns_dir) → total_score
+def test_scan_skill_with_problems():
+    """GIVEN learns/ 含 [P2]xxx
+    WHEN scan_skill
+    THEN total_score == 2 * category_weight"""
+
+def test_scan_skill_without_learns():
+    """GIVEN 路径无 learns/
+    WHEN scan_skill
+    THEN returns None"""
+
+def test_total_score_zero_when_no_Px_tags():
+    """GIVEN learns/ 含 '### 问题'（无 [P0-3]）
+    WHEN scan_skill
+    THEN total_score == 0"""
+```
+
+---
+
 ## Step 0：扫描 + 打分排序
 
 运行 scanner.py 扫描所有 skill 的 learns/：
