@@ -98,6 +98,26 @@ darwin-skill(target_skill="xxx", learns_dir="/path/to/learns")
 
 ---
 
+## 危险信号表
+
+🔴 **以下症状出现时，立即停止并诊断**：
+
+| 危险信号 | 症状 | 根因 | 正确做法 |
+|----------|------|------|----------|
+| scanner 空输出 | `skills: []` | 路径无 learns/ 目录 | 确认路径正确 + 含 `learns/` 子目录 |
+| scanner 失败退出 | Python traceback | JSON 解析错/路径权限 | 单独跑 scanner.py 调试 |
+| change_magnitude=0 | total_score=0 | 所有问题无 [Px] 标签 | 用 `grep -E '### \\[P[0-3]\\]'` 检查 learns/ |
+| 修复后分数不变 | Px 仍被计分 | 未去掉 [Px] 标记 | 删整行或用 `~~### [P2] xxx~~` 删除线 |
+| 升级失败 pytest | 测试红 | 改动破坏了已有功能 | 立即回滚，不继续提交 |
+| 误判大批量 | scanner 把无 learns/ 也算 | 路径未过滤 | 手动加 `os.listdir(learns_dir)` 守卫 |
+
+## 禁止行为
+
+- ❌ 不要跳过 `change_magnitude` 阈值判断（>5 必须项目模式）
+- ❌ 不要直接 `rm` learns/ 文件（scanner 会重扫到，丢失历史）
+- ❌ 不要把已修复问题直接改 [P0]（会触发"误判大批量"）
+- ❌ 不要在未跑 pytest 前 commit
+
 ## references/ 索引
 
 | 文件 | 内容 |
