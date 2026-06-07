@@ -54,6 +54,28 @@ python3 scripts/scanner.py
 
 ---
 
+## 异常处理表
+
+| 异常 | 检测方式 | 处理方式 |
+|------|----------|----------|
+| **scanner 路径不存在** | `python3 scripts/scanner.py /no/such/path` 返回 `skills: []` | 提示"路径无效"，不报错 |
+| **learns/ 缺失** | scanner 跳过该 skill | 不计入待升级列表 |
+| **JSON 解析失败** | scanner 内 try/except 兜底 | 记录到 stderr，不中断扫描 |
+| **scanner 超时** | > 30s 仍在运行 | Ctrl+C + 检查 IO 性能（learns/ 太大）|
+| **无 [Px] 标签** | 扫描结果 total_score=0 | 用 `grep -rE '\[P[0-3]\]' <learns_dir>` 验证 |
+| **change_magnitude 卡在 0** | 公式 `total_score × 1.2` | 检查所有问题是否缺分类标签 |
+
+### 自检脚本
+
+```bash
+# 验证 scanner 输出
+python3 scripts/scanner.py /home/gql/repos
+[ -f /tmp/evolve-scan.json ] && echo "✅ scanner OK" || echo "❌ scanner failed"
+python3 -c "import json; d=json.load(open('/tmp/evolve-scan.json')); print(f'Scanned {len(d[\"skills\"])} skills')"
+```
+
+---
+
 ## Step 1：生成进化报告
 
 LLM 读取 Top N 问题内容，生成：
