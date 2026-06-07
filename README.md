@@ -1,10 +1,18 @@
+---
+search: false
+---
+
 # evolve-skill
 
-> Self-evolution engine for the skill ecosystem.
->
-> 中文说明：[README_zh.md](./README_zh.md)
+**[English](README.md) · [中文](README_zh.md)**
 
-`evolve-skill` is the meta-level self-evolution engine for the skill ecosystem. It scans all skills' `learns/` directories, scores accumulated problems, and triggers upgrades through a dual-mode system.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![version](https://img.shields.io/badge/version-1.0.0-green.svg)](#)
+[![platforms](https://img.shields.io/badge/platforms-Hermes%20Agent-4B8FBA.svg)](#)
+[![category](https://img.shields.io/badge/category-development-blue.svg)](#)
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB.svg)](https://www.python.org/)
+
+> Self-evolution engine for the skill ecosystem — scans `learns/` directories, scores problems, triggers upgrades via dual-mode system.
 
 ## What It Does
 
@@ -110,22 +118,44 @@ evolve-skill/
 ├── README_zh.md                 # 中文（top references README.md）
 ├── scripts/
 │   └── scanner.py               # Scan script (~150 lines, Python stdlib)
-└── learns/                       # (future: self-improvement tracking)
+└── learns/                      # (future: self-improvement tracking)
 ```
 
-## Referenced Skills
+## Installation
 
-| Skill | Relationship |
-|-------|-------------|
-| [skill-created](https://github.com/relunctance/skill-created) | Creates new skills with learns/ scaffold |
-| [darwin-skill](https://github.com/relunctance/darwin-skill) | Executes actual code evolution |
-| arch-diagram-skill | Reference implementation (coming soon) |
+```bash
+# Clone the repository
+git clone https://github.com/relunctance/evolve-skill.git
+cd evolve-skill
+
+# Run scanner directly
+python3 scripts/scanner.py
+```
+
+**Dependencies**: Python 3.8+ (standard library only — no external packages required)
+
+## Installation Verification
+
+- [ ] Python 3.8+ installed (`python3 --version`)
+- [ ] Clone successful (`ls -la README.md`)
+- [ ] Scanner runs (`python3 scripts/scanner.py`)
+- [ ] JSON output generated (`cat /tmp/evolve-scan.json`)
+
+## Related Skills
+
+| Skill | Relationship | Why Related |
+|-------|-------------|-------------|
+| [skill-created](https://github.com/relunctance/skill-created) | Creates new skills with `learns/` scaffold | Provides the scaffold that `evolve-skill` scans for improvements |
+| [darwin-skill](https://github.com/relunctance/darwin-skill) | Executes actual code evolution | Performs the upgrade work that `evolve-skill` triggers |
+| arch-diagram-skill | Reference implementation (private) | Shows the problem-settling workflow end-to-end |
 
 ## Contributing
 
-See [README_zh.md](./README_zh.md#欢迎贡献) (Chinese).
+Contributions welcome! Here's how to get involved:
 
-**Found a problem?** Create a `{category}-problems.md` file in the skill's `learns/` directory:
+### Report Problems
+
+Create a `{category}-problems.md` file in the target skill's `learns/` directory:
 
 ```markdown
 ### [P2] Your problem description here
@@ -141,11 +171,14 @@ See [README_zh.md](./README_zh.md#欢迎贡献) (Chinese).
 ---
 ```
 
+### Contribute Code
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes
+4. Run tests (`pytest tests/`)
+5. Submit a Pull Request with a link to the relevant Issue
+
 ## License
 
-MIT
-
-## Platform Badge
-
-![Hermes](https://img.shields.io/badge/Hermes-Agent-4B8FBA)
-![Python](https://img.shields.io/badge/Python-3.8+-3776AB)
+MIT License

@@ -1,10 +1,18 @@
+---
+search: false
+---
+
 # evolve-skill
 
-> skill 体系的 meta-level 自我进化引擎。
->
-> English version: [README.md](./README.md)
+**[English](README.md) · [中文](README_zh.md)**
 
-`evolve-skill` 是 skill 体系的 meta-level 自我进化引擎。它扫描所有 skills 的 `learns/` 目录，对积累的问题进行评分，并触发双模式升级。
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![version](https://img.shields.io/badge/version-1.0.0-green.svg)](#)
+[![platforms](https://img.shields.io/badge/platforms-Hermes%20Agent-4B8FBA.svg)](#)
+[![category](https://img.shields.io/badge/category-development-blue.svg)](#)
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB.svg)](https://www.python.org/)
+
+> skill 体系的 meta-level 自我进化引擎 — 扫描 `learns/` 目录，对问题评分，触发双模式升级。
 
 ## 核心能力
 
@@ -113,13 +121,33 @@ evolve-skill/
 └── learns/                      # （未来：自我进化追踪）
 ```
 
+## 安装
+
+```bash
+# 克隆仓库
+git clone https://github.com/relunctance/evolve-skill.git
+cd evolve-skill
+
+# 直接运行 scanner
+python3 scripts/scanner.py
+```
+
+**依赖**：Python 3.8+（仅使用标准库，无需安装外部包）
+
+## 安装后验证
+
+- [ ] Python 3.8+ 已安装（`python3 --version`）
+- [ ] 克隆成功（`ls -la README.md`）
+- [ ] scanner 可运行（`python3 scripts/scanner.py`）
+- [ ] JSON 输出生成（`cat /tmp/evolve-scan.json`）
+
 ## 相关 Skills
 
-| Skill | 关系 |
-|-------|------|
-| [skill-created](https://github.com/relunctance/skill-created) | 创建带 learns/ scaffold 的新 skill |
-| [darwin-skill](https://github.com/relunctance/darwin-skill) | 执行实际代码进化 |
-| arch-diagram-skill | 参考实现（待发布） |
+| Skill | 关系 | 为什么相关 |
+|-------|------|----------|
+| [skill-created](https://github.com/relunctance/skill-created) | 创建带 `learns/` scaffold 的新 skill | 为 `evolve-skill` 提供可扫描的 scaffold 结构 |
+| [darwin-skill](https://github.com/relunctance/darwin-skill) | 执行实际代码进化 | 执行 `evolve-skill` 触发的升级工作 |
+| arch-diagram-skill | 参考实现（私有仓库） | 展示端到端问题沉淀工作流 |
 
 ## 欢迎贡献
 
@@ -146,15 +174,11 @@ evolve-skill/
 ### 贡献代码
 
 1. Fork 本仓库
-2. 创建 feature 分支
-3. 提交 PR + 关联 Issue
-4. 确保 pytest 通过
+2. 创建 feature 分支（`git checkout -b feature/your-feature`）
+3. 提交更改
+4. 运行测试（`pytest tests/`）
+5. 提交 PR 并关联 Issue
 
-## License
+## 许可证
 
-MIT
-
-## 平台徽章
-
-![Hermes](https://img.shields.io/badge/Hermes-Agent-4B8FBA)
-![Python](https://img.shields.io/badge/Python-3.8+-3776AB)
+MIT License
