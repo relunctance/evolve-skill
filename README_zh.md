@@ -2,7 +2,9 @@
 search: false
 ---
 
-# evolve-skill
+<div align="center">
+
+# 🌱 evolve-skill
 
 **[English](README.md) · [中文](README_zh.md)**
 
@@ -12,7 +14,11 @@ search: false
 [![category](https://img.shields.io/badge/category-development-blue.svg)](#)
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB.svg)](https://www.python.org/)
 
-> skill 体系的 meta-level 自我进化引擎 — 扫描 `learns/` 目录，对问题评分，触发双模式升级。
+*skill 体系的 meta-level 自我进化引擎*
+
+</div>
+
+> 扫描 `learns/` 目录，对问题评分，触发双模式升级。
 
 ## 核心能力
 

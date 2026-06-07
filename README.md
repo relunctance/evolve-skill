@@ -2,7 +2,9 @@
 search: false
 ---
 
-# evolve-skill
+<div align="center">
+
+# 🌱 evolve-skill
 
 **[English](README.md) · [中文](README_zh.md)**
 
@@ -11,6 +13,10 @@ search: false
 [![platforms](https://img.shields.io/badge/platforms-Hermes%20Agent-4B8FBA.svg)](#)
 [![category](https://img.shields.io/badge/category-development-blue.svg)](#)
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB.svg)](https://www.python.org/)
+
+*Self-evolution engine for the skill ecosystem*
+
+</div>
 
 > Self-evolution engine for the skill ecosystem — scans `learns/` directories, scores problems, triggers upgrades via dual-mode system.
 
