@@ -20,21 +20,21 @@ search: false
 
 > 扫描 `learns/` 目录，对问题评分，触发双模式升级。
 
-## 核心能力
+## 🌱 核心能力
 
 ```
 skill 运行 → reflection_hook → LLM 反思沉淀 → evolve-skill 扫描
 → 评分排序 → 双模式升级 → pytest + commit + 通知
 ```
 
-## 核心特性
+## ✨ 核心特性
 
 - **自动反思**：skill 运行后自动将经验沉淀到 `learns/`
 - **评分体系**：P0-P3 严重程度 × 分类权重 = 问题分数
 - **双模式升级**：批量模式（小改动）vs 项目模式（重大变更）
 - **零依赖**：纯 Python 标准库，无外部包
 
-## 快速开始
+## 🚀 快速开始
 
 ### 扫描所有 skills
 
@@ -66,7 +66,7 @@ python3 scripts/scanner.py
 hermes skills run evolve-skill
 ```
 
-## 评分体系
+## 📊 评分体系
 
 ### 严重程度标签
 
@@ -108,14 +108,14 @@ learns `{category}-problems.md` 采用**双层结构**：
 - `### [P2] ...` → scanner 提取计分
 - `<!-- 问题 #N -->` 块 → 人类可读完整记录
 
-## 双模式升级
+## 🔄 双模式升级
 
 | 模式 | 触发条件 | 用户交互 |
 |------|---------|---------|
 | 批量模式 | `change_magnitude ≤ 5` | 单次概要确认 |
 | 项目模式 | `change_magnitude > 5` | 逐个精细确认 |
 
-## 文件结构
+## 📁 文件结构
 
 ```
 evolve-skill/
@@ -127,7 +127,7 @@ evolve-skill/
 └── learns/                      # （未来：自我进化追踪）
 ```
 
-## 安装
+## 📦 安装
 
 ```bash
 # 克隆仓库
@@ -140,28 +140,29 @@ python3 scripts/scanner.py
 
 **依赖**：Python 3.8+（仅使用标准库，无需安装外部包）
 
-## 安装后验证
+## ✅ 安装后验证
 
 - [ ] Python 3.8+ 已安装（`python3 --version`）
 - [ ] 克隆成功（`ls -la README.md`）
 - [ ] scanner 可运行（`python3 scripts/scanner.py`）
 - [ ] JSON 输出生成（`cat /tmp/evolve-scan.json`）
 
-## 相关 Skills
+## 🔗 相关 Skills
 
 | Skill | 关系 | 为什么相关 |
 |-------|------|----------|
 | [skill-created](https://github.com/relunctance/skill-created) | 创建带 `learns/` scaffold 的新 skill | 为 `evolve-skill` 提供可扫描的 scaffold 结构 |
 | [darwin-skill](https://github.com/relunctance/darwin-skill) | 执行实际代码进化 | 执行 `evolve-skill` 触发的升级工作 |
+| [readme-skill](https://github.com/relunctance/readme-skill) | README 美化工具 | `evolve-skill` 可扫描其 `learns/` 并触发文档改进 |
 | arch-diagram-skill | 参考实现（私有仓库） | 展示端到端问题沉淀工作流 |
 
-## 欢迎贡献
+## 🤝 欢迎贡献
 
 欢迎提交 Issue 和 PR！
 
-### 发现问题
+### 🐛 发现问题
 
-在对应 skill 的 `learns/` 目录创建 `{category}-problems.md`：
+在对应 skill 的 `learns/` 目录创建或编辑 `{category}-problems.md`：
 
 ```markdown
 ### [P2] 你的问题描述
@@ -177,13 +178,14 @@ python3 scripts/scanner.py
 ---
 ```
 
-### 贡献代码
+### 💻 贡献代码
 
 1. Fork 本仓库
 2. 创建 feature 分支（`git checkout -b feature/your-feature`）
-3. 提交更改
-4. 运行测试（`pytest tests/`）
-5. 提交 PR 并关联 Issue
+3. 编写 BDD 注释 + TDD 测试
+4. 提交更改（`git commit -m 'Add AmazingFeature'`）
+5. 推送到分支（`git push origin feature/your-feature`）
+6. 创建 Pull Request
 
 ## 许可证
 
