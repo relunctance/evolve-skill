@@ -151,7 +151,7 @@ python3 scripts/scanner.py
 | Skill | Relationship | Why Related |
 |-------|-------------|-------------|
 | [skill-created](https://github.com/relunctance/skill-created) | Creates new skills with `learns/` scaffold | Provides the scaffold structure that `evolve-skill` scans to discover improvement opportunities |
-| [darwin-skill](https://github.com/relunctance/darwin-skill) | Executes actual code evolution | Performs the upgrade work that `evolve-skill` triggers based on scored problems |
+| [darwin-skill](https://github.com/alchaincyf/darwin-skill) | Executes actual code evolution | Performs the upgrade work that `evolve-skill` triggers based on scored problems |
 | [readme-skill](https://github.com/relunctance/readme-skill) | README beautification | A skill that `evolve-skill` can scan and trigger improvements for its own documentation |
 | arch-diagram-skill | Reference implementation (private) | Demonstrates the end-to-end problem-settling workflow using `learns/` |
 

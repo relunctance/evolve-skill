@@ -152,7 +152,7 @@ python3 scripts/scanner.py
 | Skill | 关系 | 为什么相关 |
 |-------|------|----------|
 | [skill-created](https://github.com/relunctance/skill-created) | 创建带 `learns/` scaffold 的新 skill | 为 `evolve-skill` 提供可扫描的 scaffold 结构 |
-| [darwin-skill](https://github.com/relunctance/darwin-skill) | 执行实际代码进化 | 执行 `evolve-skill` 触发的升级工作 |
+| [darwin-skill](https://github.com/alchaincyf/darwin-skill) | 执行实际代码进化 | 执行 `evolve-skill` 触发的升级工作 |
 | [readme-skill](https://github.com/relunctance/readme-skill) | README 美化工具 | `evolve-skill` 可扫描其 `learns/` 并触发文档改进 |
 | arch-diagram-skill | 参考实现（私有仓库） | 展示端到端问题沉淀工作流 |
 
