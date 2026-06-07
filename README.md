@@ -119,7 +119,7 @@ learns `{category}-problems.md` uses a **dual-layer format**:
 evolve-skill/
 ├── SKILL.md                      # Main entry (SOP + prompt templates)
 ├── README.md                     # English documentation
-├── README_zh.md                  # 中文文档（top references README.md）
+├── README_zh.md                  # Chinese documentation (top references README.md)
 ├── scripts/
 │   └── scanner.py               # Scan script (~150 lines, Python stdlib)
 └── learns/                      # Self-improvement tracking archive
