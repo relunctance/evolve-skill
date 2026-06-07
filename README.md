@@ -9,10 +9,11 @@ search: false
 **[English](README.md) · [中文](README_zh.md)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![version](https://img.shields.io/badge/version-1.0.0-green.svg)](#)
+[![version](https://img.shields.io/badge/version-1.1.0-green.svg)](#)
 [![platforms](https://img.shields.io/badge/platforms-Hermes%20Agent%20%7C%20Claude%20Code%20%7C%20OpenClaw-4B8FBA.svg)](#)
 [![category](https://img.shields.io/badge/category-development-blue.svg)](#)
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB.svg)](https://www.python.org/)
+[![stars](https://img.shields.io/github/stars/relunctance/evolve-skill?style=flat&label=Stars)](https://github.com/relunctance/evolve-skill/stargazers)
 
 *Self-evolution engine for the skill ecosystem — scans `learns/` directories, scores problems, triggers upgrades via dual-mode system*
 
